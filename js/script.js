@@ -17,3 +17,19 @@ var possibilities = maxNumber - bombsNumber;
 var bombList = [];
 var allowedNumbers = [];
 var user = 0;
+
+// Bombs Generation 
+while (bombList.length < bombsNumber) {
+    var bomb = randomNumber(maxNumber);
+
+    if(! bombList.length < bombsNumber) {
+        bombList.push(bomb);
+    }
+}
+console.log("Bomb List: ", bombList);
+
+
+// UTILITIES
+function randomNumber(max) {
+    return Math.floor(Math.random() * max) - 1;
+}
