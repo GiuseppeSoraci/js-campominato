@@ -22,11 +22,30 @@ var user = 0;
 while (bombList.length < bombsNumber) {
     var bomb = randomNumber(maxNumber);
 
-    if(! bombList.length < bombsNumber) {
+    if (! bombList.length < bombsNumber) {
         bombList.push(bomb);
     }
 }
 console.log("Bomb List: ", bombList);
+
+// Game Loop
+while ((allowedNumbers.length < possibilities) && (! bombList.includes(user))) {
+    // User Choice
+    user = parseInt(prompt("Please enter a number from 1 to " + maxNumber + "\nSuccessful attempts: " + allowedNumbers.length + " of " + possibilities));
+    // Validation
+    while (isNaN(user) || user < 1 || user > maxNumber) {
+        parseInt(prompt("Sorry, value is invalid. \nPlease enter a number from 1 to " + maxNumber));
+    }
+}
+console.log(user);
+
+
+
+
+
+
+
+
 
 
 // UTILITIES
